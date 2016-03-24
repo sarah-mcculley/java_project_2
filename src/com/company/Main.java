@@ -5,20 +5,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void  addTask(List<Task> tasks) throws Exception{
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the name of the new task.");
-        String newTask = scanner.nextLine();
-
-        Scanner scanner2 = new Scanner(System.in);
-        System.out.println("Please enter the description of the new task");
-        String newDescription = scanner2.nextLine();
-
-        Scanner scanner3 = new Scanner(System.in);
-        System.out.println("Please enter the priority for the new task");
-        int newPriority = Integer.parseInt(scanner3.nextLine());
-
+    public static void  addTask(List<Task> tasks){
         UserInput input = new UserInput();
+        String newTask = input.promptString("Please enter the name of the new task.");
+        String newDescription = input.promptString("Please enter the description of the new task");
+        int newPriority = input.promptInt("Please enter the priority for the new task");
 
         Task task = new Task(newTask, newDescription, newPriority);
 
@@ -27,9 +18,8 @@ public class Main {
     }
 
     public static void removeTask(List<Task> tasks){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the index of the task to remove.");
-        String index = scanner.nextLine();
+        UserInput input = new UserInput();
+        String index = input.promptString("Please enter the index of the task to remove.");
 
         tasks.remove(Integer.parseInt(index));
 

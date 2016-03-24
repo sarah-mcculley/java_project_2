@@ -26,26 +26,6 @@ public class UserInput {
         return userInt;
     }
 
-    public double promptDouble(String message){
-        System.out.println(message);
-        String userInput = scanner.nextLine();
-        double userDouble = 0;
-        boolean isDouble = false;
-
-        while (!isDouble) {
-            try {
-                userDouble = Double.parseDouble(userInput);
-                isDouble = true;
-            }
-            catch (NumberFormatException e) {
-                System.out.println(userInput + " is not an double. "
-                        + message);
-                userInput = scanner.nextLine();
-            }
-        }
-
-        return userDouble;
-    }
 
     public String promptString(String message){
         System.out.println(message);

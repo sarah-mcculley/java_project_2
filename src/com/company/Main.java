@@ -55,9 +55,8 @@ public class Main {
     }
 
     public static void prioritizeTasks(List<Task> tasks){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the number task priority you would like to see");
-        int requestedPriority = Integer.parseInt(scanner.nextLine());
+        UserInput input = new UserInput();
+        int requestedPriority = input.promptInt("Please enter the number task priority you would like to see");
 
         for(int i = 0; i < tasks.size(); i++ )
         {

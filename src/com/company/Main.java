@@ -26,18 +26,15 @@ public class Main {
     }
 
     public static void updateTask(List<Task> tasks){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the index of the task to update.");
-        String index = scanner.nextLine();
+        UserInput input = new UserInput();
+        String index = input.promptString("Enter the index of the task to update.");
 
-        System.out.println("Enter the new title of the task.");
-        String updatedTask = scanner.nextLine();
+        String updatedTask = input.promptString("Enter the new title of the task.");
 
-        System.out.println("Enter the new description of the task");
-        String updatedDescription = scanner.nextLine();
 
-        System.out.println("Enter the new priority");
-        int newPriority = Integer.parseInt(scanner.nextLine());
+        String updatedDescription = input.promptString("Enter the new description of the task");
+
+        int newPriority = input.promptInt("Enter the new priority");
 
         Task item = tasks.get(Integer.parseInt(index));
 
